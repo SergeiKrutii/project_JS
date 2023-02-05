@@ -1,2 +1,10 @@
-@import './common';
-@import './example';
+@import './utils/base';
+@import './utils/variables';
+@import './utils/container';
+@import './utils/placeholders';
+@import './utils/common';
+
+
+@import './layout/header';
+@import './layout/main-event';
+@import './layout/footer';
