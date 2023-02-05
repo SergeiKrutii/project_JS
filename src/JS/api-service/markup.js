@@ -1,1 +1,0 @@
-console.log('Это консолько markup ^_^')
