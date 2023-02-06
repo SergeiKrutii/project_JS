@@ -1,4 +1,4 @@
-const country = [
+const countryArray = [
   {
     US: 'United States Of America',
     AD: 'Andorra',
@@ -83,3 +83,5 @@ const country = [
     VE: 'Venezuela',
   },
 ];
+
+export { countryArray };
