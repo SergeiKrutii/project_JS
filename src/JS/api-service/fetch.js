@@ -26,3 +26,4 @@ export default class ApiFetch {
     this.page = 1;
   }
 }
+
