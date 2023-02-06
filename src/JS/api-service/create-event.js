@@ -1,12 +1,13 @@
 import ApiFetch from "./fetch";
+import { makeMarkup } from "./markup";
 
 const newClass = new ApiFetch();
 
 
-function createEvent() {
-    const eventData = newClass.fetchData();
-    console.log(eventData)
-    
+async function createEvent() {
+    const eventData = await newClass.fetchData();
+    const markup = makeMarkup(eventData)
+    // console.log(eventData)
 }
 
 createEvent();
