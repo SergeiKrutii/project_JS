@@ -17,7 +17,7 @@
 // export { makeMarkup };
 
 
-export const eventSettings = event => ({
+export const makeMarkup = event => ({
   id: event.id,
   image: {
     small: event.images.find(img => {
