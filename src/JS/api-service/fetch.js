@@ -12,9 +12,9 @@ export default class ApiFetch {
   async fetchData() {
     try {
       const response = await axios.get(
-        `${this.URL}${this.KEY}&locale=fr`
+        `${this.URL}${this.KEY}&locale=${this.chooseCountry}&keyword=${this.startSearch}`
       );
-      const data = response.data;
+      const data = response.data; 
       console.log(data._embedded.events);
       return data;
     } catch (error) {}
