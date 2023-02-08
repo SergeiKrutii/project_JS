@@ -59,23 +59,47 @@
     right: 30px;
 }
 
-.choose_header{
-    display: block;
-    position: relative;
-    width: 100%;
+// .choose_header{
+//     display: block;
+//     position: relative;
+//     width: 100%;
+//     padding: 10px 30px;
+//     margin-top: 25px;
+//     border-radius: 20px;
+//     border-style: none;
+//     outline: none;
+//     cursor: pointer;
+
+//     color: #939393;
+//     font-family: inherit;
+//     font-size: 16px;
+//     line-height: 1.25;
+
+//     background: hsla(0,0%,100%,.2);
+//     backdrop-filter: blur(20px);
+//     transition: all .3s cubic-bezier(.19,1,.22,1) .2s;
+// }
+
+[name="chooseQuery"] {
+    z-index: 2;
     padding: 10px 30px;
     margin-top: 25px;
-    border-radius: 20px;
-    border-style: none;
-    outline: none;
-    cursor: pointer;
-
-    color: #939393;
-    font-family: inherit;
+    width: 270px;
+    height: 40px;
     font-size: 16px;
     line-height: 1.25;
-
-    background: hsla(0,0%,100%,.2);
+    border-radius: 20px;
+    background: hsla(0, 0%, 100%, .2);
+    color: #fff;
     backdrop-filter: blur(20px);
-    transition: all .3s cubic-bezier(.19,1,.22,1) .2s;
+    border: none;
+    cursor: pointer;
+    transition: transform .3s cubic-bezier(.19, 1, .22, 1) .2s, box-shadow .3s cubic-bezier(.19, 1, .22, 1) .2s;
+    outline: none;
+}
+
+[name="chooseQuery"]:focus,
+[name="chooseQuery"]:hover {
+    box-shadow: 0 0 1px 1px #DC56C5;
+    outline: transparent;
 }
