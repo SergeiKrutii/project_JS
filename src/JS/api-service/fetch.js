@@ -14,8 +14,7 @@ export default class ApiFetch {
       const response = await axios.get(
         `${this.URL}${this.KEY}&locale=${this.chooseCountry}&keyword=${this.startSearch}`
       );
-      const data = response.data; 
-      console.log(data._embedded.events);
+      const data = response.data;
       return data;
     } catch (error) {}
   }
