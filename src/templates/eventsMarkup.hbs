@@ -1,15 +1,20 @@
-{{#each this}}
+<ul>
+        <p>{{kuy}}</p>
+    {{#each this}}
 <li class="event">
     <div class="event__card">
-        <img src="" alt="" class="event__image">
+        {{!-- <img src="{{image.smal}}" alt="" class="event__image"> --}}
     </div>
     <div class="event__info">
-        <span class="event__name"></span>
-        <p class="event__date"></p>
+        <span class="event__name">{{name}}</span>
+        <p class="event__date">{{date}}</p>
         <div class="event__place">
             <p class="event__icon">
                 <svg width="14px" height="20">
+                    {{place}}
             </p>
         </div>
     </div>
 </li>
+{{/each}}
+</ul>
