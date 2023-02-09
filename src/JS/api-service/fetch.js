@@ -12,7 +12,7 @@ export default class ApiFetch {
   async fetchData() {
     try {
       const response = await axios.get(
-        `${this.URL}${this.KEY}&locale=${this.chooseCountry}`
+        `${this.URL}${this.KEY}&locale=${this.chooseCountry}&keyword=${this.startSearch}`
       );
       const data = response.data;
       return data;

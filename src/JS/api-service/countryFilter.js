@@ -1,23 +1,20 @@
 import { refs } from './refs-api';
 import ApiFetch from './fetch';
-const debounce = require('lodash.debounce');
-const throttle = require('lodash.throttle');
-import { countryArray } from './countriesArray';
+import axios from 'axios';
 
 const api = new ApiFetch();
-api.fetchData();
 
-refs.chooseForm.addEventListener('input', onCountry);
-refs.startForm.addEventListener('input', debounce(onSearchStart, 1000));
+refs.startForm.addEventListener('input', onSearchStart);
 
 function onSearchStart(e) {
-  e.preventDefault();
-  api.startSearch = e.currentTarget.elements.startQuery.value;
+  api.startSearch = e.currentTarget.elements.startQuery.value.trim();
   api.fetchData();
 }
 
-function onCountry(e) {
-  e.preventDefault();
-  api.chooseCountry = e.currentTarget.elements.chooseQuery.value;
-  api.fetchData();
+dropdown(refs.countryList);
+
+function dropdown(e) {
+  e.addEventListener('click', function () {
+    e.classList.toggle('active');
+  });
 }
