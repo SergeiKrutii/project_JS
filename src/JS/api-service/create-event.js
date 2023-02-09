@@ -1,38 +1,25 @@
 import ApiFetch from './fetch';
 import { makeData } from './markup';
 import { refs } from './refs-api';
+import evtTpl from '../../templates/eventsMarkup.hbs';
 const newClass = new ApiFetch();
-import evtMarkup from '../../templates/eventsMarkup.hbs';
 
-const Handlebars = require('handlebars');
-
-console.log(Handlebars);
-console.log(evtMarkup);
 async function createEvent() {
   const {
     _embedded: { events },
   } = await newClass.fetchData();
-  console.log(events[0]);
+  console.log('events[0]', events[0]);
+
   const mark = events.map(event => {
     return makeData(event);
   });
-  console.log('mark', mark);
-  // const template = Handlebars.precompile(evtMarkup(events[0]));
+  console.log('mark :>> ', mark);
 
   appendMarkup(mark);
 }
 
 function appendMarkup(events) {
- const template = Handlebars.compile(evtMarkup);
-  console.log(template)
-  const any = ['a1','s2']
-  const tru = template({kuy: 'asda'}); 
-  console.log(tru)
-
-  // refs.eventList.insertAdjacentHTML(
-  //   'beforeend',
-  //   events.map(elem => evtMarkup(elem))
-  // );
+  refs.eventList.insertAdjacentHTML('beforeend', evtTpl(events));
 }
 
 createEvent();
