@@ -10,3 +10,11 @@ function onSearchStart(e) {
   api.startSearch = e.currentTarget.elements.startQuery.value.trim();
   api.fetchData();
 }
+
+dropdown(refs.countryList);
+
+function dropdown(e) {
+  e.addEventListener('click', function () {
+    e.classList.toggle('active');
+  });
+}
