@@ -59,47 +59,72 @@
     right: 30px;
 }
 
-// .choose_header{
-//     display: block;
-//     position: relative;
-//     width: 100%;
-//     padding: 10px 30px;
-//     margin-top: 25px;
-//     border-radius: 20px;
-//     border-style: none;
-//     outline: none;
-//     cursor: pointer;
-
-//     color: #939393;
-//     font-family: inherit;
-//     font-size: 16px;
-//     line-height: 1.25;
-
-//     background: hsla(0,0%,100%,.2);
-//     backdrop-filter: blur(20px);
-//     transition: all .3s cubic-bezier(.19,1,.22,1) .2s;
-// }
-
-[name="chooseQuery"] {
-    z-index: 2;
+.choose_header{
+    display: block;
+    position: relative;
+    width: 100%;
     padding: 10px 30px;
     margin-top: 25px;
-    width: 270px;
-    height: 40px;
+    border-radius: 20px;
+    border-style: none;
+    outline: none;
+    cursor: pointer;
+
+    color: #939393;
+    font-family: inherit;
     font-size: 16px;
     line-height: 1.25;
-    border-radius: 20px;
-    background: hsla(0, 0%, 100%, .2);
-    color: #fff;
+
+    background: hsla(0,0%,100%,.2);
     backdrop-filter: blur(20px);
-    border: none;
-    cursor: pointer;
-    transition: transform .3s cubic-bezier(.19, 1, .22, 1) .2s, box-shadow .3s cubic-bezier(.19, 1, .22, 1) .2s;
-    outline: none;
+    transition: all .3s cubic-bezier(.19,1,.22,1) .2s;
 }
 
-[name="chooseQuery"]:focus,
-[name="chooseQuery"]:hover {
-    box-shadow: 0 0 1px 1px #DC56C5;
+.choose_header:focus,
+.choose_header:hover {
+    box-shadow: 0 0 1px 1px #dc56c5;
     outline: transparent;
+}
+
+.choose_header::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #333;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(-45deg);
+    z-index: 10;
+    transition: 0.5s;
+}
+
+.choose_header.active::before {
+    top: 22px;
+    transform: rotate(-225deg);
+}
+
+.country-list{
+    width: 270px;
+    height: 210px;
+    overflow-y: scroll;
+    margin-left: -30px;
+    transform: scaleY(1);
+    transition: all .3s cubic-bezier(.19, 1, .22, 1) .2s;
+    color: ccc;
+}
+
+.country-btn{
+    padding-left: 20px;
+}
+
+.country-list::-webkit-scrollbar{
+    width: 4px;
+}
+
+.country-list::-webkit-scrollbar-thumb{
+    background: #b0aeae;
+    border-radius: 8px;
 }
