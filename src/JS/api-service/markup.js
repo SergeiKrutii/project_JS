@@ -1,22 +1,3 @@
-// function makeMarkup({ _embedded }) {
-  
-  
-  // console.log(_embedded);
-  //   const normalizedData = _embedded.map(
-  //     ({
-  //       name,
-  //       dates: {
-  //         start: { localDate },
-  //       },
-  //     }) => {
-  //       console.log('');
-  //     }
-  //   );
-// }
-
-// export { makeMarkup };
-
-
 export const makeData = event => {
   return {
     id: event.id,
