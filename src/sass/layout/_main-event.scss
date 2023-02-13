@@ -1,0 +1,71 @@
+.block {
+    position: relative;
+}
+.js-event-list{
+    position: absolute;
+    top: -40px;
+}
+
+.js-event-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 14px;
+  grid-row-gap: 30px;
+}
+
+.event{
+    position: relative;
+}
+
+.event__image {
+  width: 128px;
+  height: 161px;
+  object-fit: cover;
+  margin-bottom: 5px;
+  border-radius: 50px 0px;
+}
+
+.event__card::before {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  width: 108px;
+  height: 101px;
+  left: 33px;
+  top: -13px;
+
+  border: 1px solid rgba(220, 86, 197, 0.3);
+  border-radius: 50px 0px;
+}
+
+.event__info {
+  @extend %flex__centering;
+
+  flex-wrap: wrap;
+
+  max-width: 128px;
+}
+
+.event__name {
+  @extend %evtNameTPL;
+  margin-bottom: 5px;
+}
+
+.event__date {
+  @extend %evtNameTPL;
+  color: $MonseratPosterInfo_color;
+  font-weight: 400;
+  width: auto;
+  margin-bottom: 5px;
+}
+
+.event__place {
+  @extend %evtPlaceTPL;
+  max-width: 128px;
+}
+
+.event__svg {
+  position: relative;
+  fill: #ffffff;
+  stroke: #ffffff;
+}

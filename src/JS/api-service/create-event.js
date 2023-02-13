@@ -8,7 +8,6 @@ async function createEvent() {
   const {
     _embedded: { events },
   } = await newClass.fetchData();
-  console.log('events[0]', events[0]);
 
   const mark = events.map(event => {
     return makeData(event);
