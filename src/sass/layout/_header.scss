@@ -48,18 +48,22 @@
 }
 
 [name="startQuery"]:focus, [name="startQuery"]:hover{
-
     box-shadow: 0 0 1px 1px #dc56c5;
     outline: transparent;
 }
 
 .svg_search{
     position: absolute;
-    top: 14px;
+    top: 17px;
     right: 30px;
 }
 
+.country-list.active~.svg_search {
+    transform: rotate(180deg);
+}
+
 .choose_header{
+    z-index: 2;
     display: block;
     position: relative;
     width: 100%;
@@ -80,6 +84,11 @@
     transition: all .3s cubic-bezier(.19,1,.22,1) .2s;
 }
 
+.header_svg{
+    position: absolute;
+    
+}
+
 .choose_header:focus,
 .choose_header:hover {
     box-shadow: 0 0 1px 1px #dc56c5;
@@ -93,7 +102,6 @@
 }
 
 .country-list-li{
-    // display: none;
     width: 270px;
     height: 210px;
     overflow-y: scroll;
@@ -102,11 +110,7 @@
     transition: all .3s cubic-bezier(.19, 1, .22, 1) .2s;
     color: ccc;
 }
-/////////////////////////////////////////
-// .choose_header:hover .country-list-li{
-//     display: block;
-// }
-/////////////////////////////////////////
+
 .country-btn{
     padding-left: 30px;
 }
@@ -125,3 +129,6 @@
     border-radius: 8px;
 }
 
+.current{
+    outline: none;
+}
