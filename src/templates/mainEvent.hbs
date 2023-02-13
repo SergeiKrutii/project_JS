@@ -1,16 +1,18 @@
 {{#each this}}
   <li class='event'>
     <div class='event__card'>
-      <img src={{image.small}} alt="" class="event__image">
+      <img src={{image.small}} alt={{name}} class="event__image">
     </div>
     <div class='event__info'>
       <span class='event__name'>{{name}}</span>
-      <p class='event__date'>{{date}}</p>
+      <span class='event__date'>{{date}}</span>
       <div class='event__place'>
-        <p class="event__icon">
-                <svg width="14px" height="20">
-                    {{place}}
-            </p>
+        <span class="event__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="6" height="9"><path fill="#fff" 
+          d="M3 0C1.346 0 0 1.403 0 3.128 0 5.296 3.003 9 3.003 9S6 5.19 6 3.128C6 1.403 4.654 0 3 0Zm.905 4.044c-.25.26-.577.39-.905.39a1.25 1.25 0 0 1-.905-.39c-.5-.52-.5-1.367 0-1.887a1.246 1.246 0 0 1 1.81 0c.5.52.5 1.367 0 1.887Z" 
+          class="event__svg" width="14px" height="20"/> 
+        </span>
+       {{place}}
       </div>
     </div>
   </li>

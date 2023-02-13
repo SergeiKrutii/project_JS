@@ -1,0 +1,33 @@
+{{#each this}}
+    <div class="container">
+        <div class="modal">
+            <img src={{iamge.small}} alt={{name}} class="modal__image">
+            <div class="modal__box">
+                <div class="modal__info">
+                    <h2 class="modal__caption">INFO</h2>
+                    <p class="modal__description">{{pleaseNote}}</p>
+                    <h2 class="modal__caption">WHEN</h2>               
+                    <p class="modal__description">{{date}}{{time}}{{timezone}}</p>
+                    <h2 class="modal__caption">WHERE</h2>
+                    <p class="modal__description">{{city}}{{country}}{{place}}</p>
+                    <h2 class="modal__caption">WHO</h2>
+                    <p class="modal__description">{{name}}</p>
+                </div>
+                <ul class="modal__info">
+                        <h2 class="modal__caption">PRICES</h2>
+                    <li class="modal__item">
+                        {{prices[0].type}}{{prices[0].min}}-{{prices[0].max}}{{prices[0].currency}}
+                        <a href={{url}} class="modal__buyBtn">BUY TICKETS</a>
+                    </li>
+                    <li class="modal__item">
+                        {{prices[1].type}}{{prices[1].min}}-{{prices[1].max}}{{prices[1].currency}}
+                        <a href={{url}} class="modal__buyBtn">BUY TICKETS</a>
+                    </li>
+                    <li class="modal__item">
+                        <a href='/' class="modal__findMoreAuthor"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{{/each}}

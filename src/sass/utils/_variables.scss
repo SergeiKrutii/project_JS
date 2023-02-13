@@ -1,12 +1,26 @@
-$MonseratPosterName_color: #DC56C5;
+$MonseratPosterName_color: #dc56c5;
 $MonseratPosterInfo_color: #ffffff;
 $InputPlaceholderText_color: #939393;
-$ModalInfoText_color: #0E0E0E;
-$ModalMoreAuthorText_color: #4C00FE;
+$ModalInfoText_color: #0e0e0e;
+$ModalMoreAuthorText_color: #4c00fe;
 
-.flex__centering {
+%flex__centering {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+%evtNameTPL {
+  color: $MonseratPosterName_color;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+%evtPlaceTPL {
+  color: $MonseratPosterInfo_color;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
 }
