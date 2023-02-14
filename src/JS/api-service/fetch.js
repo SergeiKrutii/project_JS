@@ -1,3 +1,5 @@
+import { createEvent } from './create-event';
+
 const axios = require('axios').default;
 
 export default class ApiFetch {
@@ -9,13 +11,14 @@ export default class ApiFetch {
     this.chooseCountry = '';
   }
 
-  async fetchData() {
+  async fetchData(url) {
     try {
-      const response = await axios.get(
-        `${this.URL}${this.KEY}&locale=${this.startSearch}&keyword=${this.chooseCountry}`
-      );
+      const response = await axios.get(url);
       const data = response.data;
-      return data;
+      const {
+        _embedded: { events },
+      } = data;
+      createEvent(events);
     } catch (error) {}
   }
 
