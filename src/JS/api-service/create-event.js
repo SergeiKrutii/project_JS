@@ -2,13 +2,11 @@ import ApiFetch from './fetch';
 import { makeData } from './markup';
 import { refs } from './refs-api';
 import evtTpl from '../../templates/mainEvent.hbs';
-const newClass = new ApiFetch();
 
-async function createEvent() {
-  const {
-    _embedded: { events },
-  } = await newClass.fetchData();
 
+async function createEvent(events) {
+  refs.eventList.innerHTML = '';
+  
   const mark = events.map(event => {
     return makeData(event);
   });
@@ -21,4 +19,4 @@ function appendMarkup(events) {
   refs.eventList.insertAdjacentHTML('beforeend', evtTpl(events));
 }
 
-createEvent();
+export {createEvent}
