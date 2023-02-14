@@ -6,7 +6,7 @@ const refs = {
   countryList: document.querySelector('.country-list'),
   countryListLi: document.querySelector('.country-list-li'),
   modal: document.querySelector('.modal'),
-  spanModal: document.querySelector('.close'),
+  svgModal: document.querySelector('.close'),
   divBlock: document.querySelector('.block')
 };
 
