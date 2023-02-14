@@ -1,5 +1,5 @@
+import Notiflix from 'notiflix';
 import { createEvent } from './create-event';
-
 const axios = require('axios').default;
 
 export default class ApiFetch {
