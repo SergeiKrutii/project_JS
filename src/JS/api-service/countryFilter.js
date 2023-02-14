@@ -27,7 +27,9 @@ async function clickCountryItem(e) {
 }
 
 async function eventsHits() {
-  api.fetchData(`${api.URL}${api.KEY}&keyword=${api.startSearch}&`);
+  api.fetchData(
+    `${api.URL}${api.KEY}&keyword=${api.startSearch}&countryCode=${api.chooseCountry}`
+  );
 }
 
 async function eventsRandom() {
