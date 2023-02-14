@@ -12,7 +12,7 @@ export default class ApiFetch {
   async fetchData() {
     try {
       const response = await axios.get(
-        `${this.URL}${this.KEY}&locale=${this.chooseCountry}&keyword=${this.startSearch}`
+        `${this.URL}${this.KEY}&locale=${this.startSearch}&keyword=${this.chooseCountry}`
       );
       const data = response.data;
       return data;
@@ -28,10 +28,10 @@ export default class ApiFetch {
   }
 
   get choose() {
-    return this.chooseCountry;
+    return this.startSearch;
   }
 
-  set choose(newChoose) {
-    this.chooseCountry = newChoose;
+  set choose(newStart) {
+    this.startSearch = newStart;
   }
 }
