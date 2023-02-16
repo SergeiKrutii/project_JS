@@ -5,6 +5,7 @@ const refs = {
   cheeseClick: document.querySelector('.click-cheese'),
   countryList: document.querySelector('.country-list'),
   countryListLi: document.querySelector('.country-list-li'),
+  pagination: document.querySelector('.tui-pagination'),
 };
 
 export { refs };
