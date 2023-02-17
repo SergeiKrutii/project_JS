@@ -8,9 +8,7 @@ const refs = {
   pagination: document.querySelector('.tui-pagination'),
   modal: document.querySelector('.modal'),
   svgModal: document.querySelector('.close'),
-  divBlock: document.querySelector('.block'),
-  divModal: document.querySelector('.modal-insert'),
-  moreBtnModal: document.querySelector('.more__author'),
+  divBlock: document.querySelector('.block')
 };
 
 export { refs };
