@@ -6,9 +6,6 @@ const refs = {
   countryList: document.querySelector('.country-list'),
   countryListLi: document.querySelector('.country-list-li'),
   pagination: document.querySelector('.tui-pagination'),
-  modal: document.querySelector('.modal'),
-  svgModal: document.querySelector('.close'),
-  divBlock: document.querySelector('.block')
 };
 
 export { refs };
