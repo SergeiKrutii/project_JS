@@ -28,6 +28,13 @@ async function clickCountryItem(e) {
     startPaginationHits();
   }
 }
+async function eventById(id) {
+  api.fetchDataByIdOrName(`${api.URL}${api.KEY}&id=${id}`);
+}
+
+async function eventByName(artistName) {
+  api.fetchDataByIdOrName(`${api.URL}${api.KEY}&keyword=${artistName}`);
+}
 
 if (!api.startSearch & !api.chooseCountry) {
   eventsRandom();
