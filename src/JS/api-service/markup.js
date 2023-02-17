@@ -19,5 +19,5 @@ export const makeData = event => {
     country: event._embedded.venues[0].country.name,
     prices: event.priceRanges,
     url: event.url,
-  };
+  }
 };
