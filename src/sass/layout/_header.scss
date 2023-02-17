@@ -45,20 +45,28 @@
     cursor: pointer;
     transition: transform .3s cubic-bezier(.19,1,.22,1) .2s,box-shadow .3s cubic-bezier(.19,1,.22,1) .2s;
     outline: none;
+
+
+    &:hover,
+    &:focus{
+        box-shadow: 0 0 1px 1px #dc56c5;
+        outline: transparent;
+    }
+
+    &::placeholder{
+        color: #939393;
+    }
+
 }
 
-[name="startQuery"]:focus, [name="startQuery"]:hover{
-    box-shadow: 0 0 1px 1px #dc56c5;
-    outline: transparent;
-}
-
-.svg_search{
+.svg_search,
+.svg_country{
     position: absolute;
-    top: 17px;
+    top: 15px;
     right: 30px;
 }
 
-.country-list.active~.svg_search {
+.country-list.active~.svg_country {
     transform: rotate(180deg);
 }
 
@@ -82,12 +90,19 @@
     background: hsla(0,0%,100%,.2);
     backdrop-filter: blur(20px);
     transition: all .3s cubic-bezier(.19,1,.22,1) .2s;
-}
 
-.choose_header:focus,
-.choose_header:hover {
-    box-shadow: 0 0 1px 1px #dc56c5;
-    outline: transparent;
+    &:hover,
+    &:focus{
+        box-shadow: 0 0 1px 1px #dc56c5;
+        outline: transparent;
+    }
+
+    @media screen and (min-width: 768px) {
+        width: 270px;
+        margin-top: 0;
+        margin-left: 30px;
+    }
+
 }
 
 .choose_header :not(.active)+.country-list-li {
