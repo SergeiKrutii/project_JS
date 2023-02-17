@@ -7,7 +7,9 @@ const refs = {
   countryListLi: document.querySelector('.country-list-li'),
   modal: document.querySelector('.modal'),
   svgModal: document.querySelector('.close'),
-  divBlock: document.querySelector('.block')
+  divBlock: document.querySelector('.block'),
+  divModal: document.querySelector('.modal-insert'),
+  moreBtnModal: document.querySelector('.more__author'),
 };
 
 export { refs };

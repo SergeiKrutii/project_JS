@@ -11,6 +11,7 @@
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 14px;
   grid-row-gap: 30px;
+  
 }
 
 .event{
@@ -40,7 +41,7 @@
 
 .event__info {
   @extend %flex__centering;
-
+  flex-direction: column;
   flex-wrap: wrap;
 
   max-width: 128px;

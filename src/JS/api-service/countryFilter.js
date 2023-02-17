@@ -25,6 +25,13 @@ async function clickCountryItem(e) {
     eventsHits();
   }
 }
+async function eventById(id) {
+  api.fetchDataByIdOrName(`${api.URL}${api.KEY}&id=${id}`);
+}
+
+async function eventByName(artistName) {
+  api.fetchDataByIdOrName(`${api.URL}${api.KEY}&keyword=${artistName}`);
+}
 
 async function eventsHits() {
   api.fetchData(
@@ -47,3 +54,5 @@ function dropdown(e) {
     e.classList.toggle('active');
   });
 }
+
+export { eventById, eventByName };

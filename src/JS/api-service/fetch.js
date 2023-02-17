@@ -1,5 +1,5 @@
-import Notiflix from 'notiflix';
-import { createEvent } from './create-event';
+// import Notiflix from 'notiflix';
+import { createEvent, appendMarkupModal } from './create-event';
 const axios = require('axios').default;
 
 export default class ApiFetch {
@@ -18,8 +18,22 @@ export default class ApiFetch {
       const {
         _embedded: { events },
       } = data;
+      console.log(events);
       createEvent(events);
     } catch (error) {}
+  }
+
+  async fetchDataByIdOrName(url) {
+    try {
+      const response = await axios.get(url);
+      const {
+        _embedded: { events },
+      } = response.data;
+      
+      createEvent(events);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   incrementPage() {
