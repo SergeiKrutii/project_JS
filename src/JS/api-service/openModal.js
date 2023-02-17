@@ -21,3 +21,4 @@ window.onclick = function (e) {
     refs.modal.style.display = 'none';
   }
 };
+

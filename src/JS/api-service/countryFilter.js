@@ -54,4 +54,4 @@ function dropdown(e) {
   });
 }
 
-export { eventsHits, eventsRandom, api };
+export { eventsHits, eventsRandom, api, eventById, eventByName };
