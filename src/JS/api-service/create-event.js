@@ -19,4 +19,8 @@ function appendMarkup(events) {
   refs.eventList.insertAdjacentHTML('beforeend', evtTpl(events));
 }
 
-export {createEvent}
+function appendMarkupModal(events) {
+  refs.divModal.insertAdjacentHTML('beforeend', evtModTpl(events));
+}
+
+export { createEvent, appendMarkupModal };
