@@ -1,7 +1,7 @@
 import { refs } from './refs-api';
 import ApiFetch from './fetch';
 import { debounce } from 'lodash';
-import { startPaginationHits, startPaginationRandom } from './pagination';
+
 const api = new ApiFetch();
 
 refs.startForm.addEventListener('input', debounce(onSearchStart, 500));
@@ -14,7 +14,6 @@ async function onSearchStart() {
   }
   {
     eventsHits();
-    startPaginationHits();
   }
 }
 
@@ -23,27 +22,29 @@ async function clickCountryItem(e) {
     api.chooseCountry = e.target.dataset.country;
     refs.countryList.textContent = e.target.textContent;
     refs.countryList.classList.remove('active');
-    api.resetPage();
     eventsHits();
-    startPaginationHits();
   }
 }
+async function eventById(id) {
+  api.fetchDataByIdOrName(`${api.URL}${api.KEY}&id=${id}`);
+}
 
-if (!api.startSearch & !api.chooseCountry) {
-  eventsRandom();
-  startPaginationRandom();
+async function eventByName(artistName) {
+  api.fetchDataByIdOrName(`${api.URL}${api.KEY}&keyword=${artistName}`);
 }
 
 async function eventsHits() {
   api.fetchData(
-    `${api.URL}${api.KEY}&keyword=${api.startSearch}&countryCode=${api.chooseCountry}&page=${api.page}`
+    `${api.URL}${api.KEY}&keyword=${api.startSearch}&countryCode=${api.chooseCountry}`
   );
 }
 
 async function eventsRandom() {
-  api.fetchData(
-    `${api.URL}${api.KEY}&classificationName=music&sort=random&page=${api.page}`
-  );
+  api.fetchData(`${api.URL}${api.KEY}&classificationName=music&sort=random`);
+}
+
+if (!api.startSearch & !api.chooseCountry) {
+  eventsRandom();
 }
 
 dropdown(refs.countryList);
@@ -54,4 +55,4 @@ function dropdown(e) {
   });
 }
 
-export { eventsHits, eventsRandom, api, eventById, eventByName };
+export { eventById, eventByName };

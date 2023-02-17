@@ -1,6 +1,6 @@
 {{#each this}}
-  <li class='event'>
-    <div class='event__card'>
+  <li class='event' data-id={{id}} data-artName={{name}}>
+    <div class='event__card' >
       <img src={{image.small}} alt={{name}} class="event__image">
     </div>
     <div class='event__info'>

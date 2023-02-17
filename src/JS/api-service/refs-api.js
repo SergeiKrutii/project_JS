@@ -5,10 +5,11 @@ const refs = {
   cheeseClick: document.querySelector('.click-cheese'),
   countryList: document.querySelector('.country-list'),
   countryListLi: document.querySelector('.country-list-li'),
-  pagination: document.querySelector('.tui-pagination'),
   modal: document.querySelector('.modal'),
   svgModal: document.querySelector('.close'),
-  divBlock: document.querySelector('.block')
+  divBlock: document.querySelector('.block'),
+  divModal: document.querySelector('.modal-insert'),
+  moreBtnModal: document.querySelector('.more__author'),
 };
 
 export { refs };
