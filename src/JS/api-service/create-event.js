@@ -1,3 +1,4 @@
+import ApiFetch from './fetch';
 import { makeData } from './markup';
 import { refs } from './refs-api';
 import evtTpl from '../../templates/mainEvent.hbs';

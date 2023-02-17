@@ -62,4 +62,4 @@ function dropdown(e) {
   });
 }
 
-export { eventsHits, eventsRandom, api, eventById, eventByName };
+export { eventsHits, eventsRandom, api };
