@@ -41,4 +41,4 @@ window.onclick = function (e) {
   }
 };
 
-export { appendMarkupModal };
+
