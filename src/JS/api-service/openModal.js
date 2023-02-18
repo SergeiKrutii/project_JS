@@ -1,5 +1,6 @@
 import { refs } from './refs-api';
 import ApiFetch from './fetch';
+import { startPaginationByName } from './pagination';
 import { eventById, eventByName } from './countryFilter';
 
 refs.divBlock.addEventListener('click', openModal);
@@ -28,6 +29,7 @@ function openModal(e) {
 function onLoadMorAuthor() {
   eventByName(artistName);
   closeModal();
+  startPaginationByName(artistName);
 }
 
 function closeModal() {
@@ -39,5 +41,3 @@ window.onclick = function (e) {
     refs.modal.style.display = 'none';
   }
 };
-
-

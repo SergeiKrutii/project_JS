@@ -35,7 +35,6 @@ export default class ApiFetch {
       const {
         _embedded: { events },
       } = response.data;
-
       createEvent(events);
     } catch (error) {
       console.log(error);

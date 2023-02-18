@@ -1,6 +1,6 @@
 import { refs } from './refs-api';
 import { api } from './countryFilter';
-import { eventsHits, eventsRandom } from './countryFilter';
+import { eventsHits, eventsRandom, eventByName } from './countryFilter';
 
 const option = {
   totalItems: 980,
@@ -17,6 +17,18 @@ function startPaginationHits() {
     api.incrementPage(e.page);
     refs.eventList.innerHTML = '';
     eventsHits();
+  });
+}
+
+function startPaginationByName(artistName) {
+  const totalEl = api.totalElement < 980 ? api.totalElement : 980;
+  option.totalItems = totalEl;
+  const pagination = new tui.Pagination(refs.pagination, option);
+  pagination.on('beforeMove', function (e) {
+    onScroll();
+    api.incrementPage(e.page);
+    refs.eventList.innerHTML = '';
+    eventByName(artistName);
   });
 }
 
@@ -39,4 +51,10 @@ function onScroll() {
   });
 }
 
-export { startPaginationHits, startPaginationRandom, option, onScroll };
+export {
+  startPaginationHits,
+  startPaginationRandom,
+  option,
+  onScroll,
+  startPaginationByName,
+};

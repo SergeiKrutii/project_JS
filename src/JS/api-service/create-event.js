@@ -2,17 +2,21 @@ import ApiFetch from './fetch';
 import { makeData } from './markup';
 import { refs } from './refs-api';
 import evtTpl from '../../templates/mainEvent.hbs';
-
+import evtModTpl from '../../templates/modalEvent.hbs';
 
 async function createEvent(events) {
-  refs.eventList.innerHTML = '';
-  
   const mark = events.map(event => {
     return makeData(event);
   });
-  console.log('mark :>> ', mark);
 
-  appendMarkup(mark);
+  if (events.length !== 1) {
+    refs.eventList.innerHTML = '';
+    appendMarkup(mark);
+    return;
+  }
+
+  refs.divModal.innerHTML = '';
+  appendMarkupModal(mark);
 }
 
 function appendMarkup(events) {
