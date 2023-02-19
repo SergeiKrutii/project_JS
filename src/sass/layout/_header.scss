@@ -10,7 +10,6 @@
         background: url(/src/images/picHeadertabl@x1wx.jpg);
         background-repeat: no-repeat;
         background-size: cover;
-
     }
     @media screen and (min-width: 1280px) {
         background: url(/src/images/picHeaderDesktop@1xw.jpg);
@@ -32,7 +31,6 @@
         display: flex;
         justify-content: center;
     }
-
 }
 
 .header_title{
@@ -81,20 +79,26 @@
     cursor: pointer;
     transition: transform .3s cubic-bezier(.19,1,.22,1) .2s,box-shadow .3s cubic-bezier(.19,1,.22,1) .2s;
     outline: none;
+
+    &:focus,
+    &:hover{
+        box-shadow: 0 0 1px 1px #dc56c5;
+        outline: transparent;
+    }
 }
 
 [name="startQuery"]::placeholder{
     color:#939393
 }
 
-[name="startQuery"]:focus, [name="startQuery"]:hover{
-    box-shadow: 0 0 1px 1px #dc56c5;
-    outline: transparent;
+[name="startQuery"]:focus-within ~ svg{
+    opacity: 0;
 }
 
-.svg_search{
+.choose_header svg,
+.startSearch svg{
     position: absolute;
-    top: 17px;
+    top: 15px;
     right: 30px;
 }
 
@@ -128,12 +132,12 @@
         margin-top: 0;
         margin-left: 30px;
     }
-}
 
-.choose_header:focus,
-.choose_header:hover {
-    box-shadow: 0 0 1px 1px #dc56c5;
-    outline: transparent;
+    &:focus,
+    &:hover{
+        box-shadow: 0 0 1px 1px #dc56c5;
+        outline: transparent;
+    }
 }
 
 .choose_header :not(.active)+.country-list-li {
@@ -149,24 +153,25 @@
     margin-left: -30px;
     transform: scaleY(1);
     transition: all .3s cubic-bezier(.19, 1, .22, 1) .2s;
-    color: ccc;
+
+    &::-webkit-scrollbar{
+        width: 4px;
+    }
+    
+    &::-webkit-scrollbar-thumb{
+        background: #b0aeae;
+        border-radius: 8px;
+    }
 }
 
 .country-btn{
     padding-left: 30px;
+
+    &:focus,
+    &:hover{
+        background: #dc56c5;
+        color: #fff;
+    }
 }
 
-.country-btn:focus, .country-btn:hover{
-    background: #dc56c5;
-    color: #fff;
-}
-
-.country-list-li::-webkit-scrollbar{
-    width: 4px;
-}
-
-.country-list-li::-webkit-scrollbar-thumb{
-    background: #b0aeae;
-    border-radius: 8px;
-}
 
