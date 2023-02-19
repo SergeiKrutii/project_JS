@@ -1,19 +1,120 @@
 .block {
-    position: relative;
-    top: -40px;
+  background-image: url('../images/bgbodyMob@1x.webp');
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    background-image: url('../images/bgbodyTab@1x.webp');
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url('../images/bgbodyTab@2x.webp');
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    background-image: url('../images/bgbodyDesc@1x.webp');
+    margin-bottom: 80px;
+
+    // @media screen and (min-device-pixel-ratio: 2),
+    //   screen and (min-resolution: 192dpi),
+    //   screen and (min-resolution: 2dppx) {
+    //   background-image: url('../images/bgbodyDesc@2x.webp');
+    // }
+  }
 }
 
-
 .js-event-list {
+  position: relative;
+  top: -40px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 14px;
   grid-row-gap: 30px;
-  
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 27px;
+    grid-row-gap: 45px;
+  }
+  @media screen and (min-width: 1200px) {
+    top: 30px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 56px;
+    grid-row-gap: 50px;
+  }
 }
 
-.event{
-    position: relative;
+.block::before {
+  content: '';
+  background-color: #212121;
+  z-index: 4;
+  position: absolute;
+  width: 2px;
+  height: 2340px;
+  left: 115px;
+  top: 175px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.block::after {
+  content: '';
+  background-color: #212121;
+  z-index: 4;
+  position: absolute;
+  width: 2px;
+  height: 2511px;
+  right: 115px;
+  top: 0px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.event {
+  text-align: center;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+.event__image:hover{
+  transform: scale(1.15) rotate(2deg);
+  -webkit-box-shadow: 5px 5px 15px 5px #ff8080, -9px 5px 15px 5px #ffe488,
+    -7px -5px 15px 5px #8cff85, 12px -5px 15px 5px #80c7ff,
+    12px 10px 15px 7px #e488ff, -10px 10px 15px 7px #ff616b,
+    -10px -7px 27px 1px #8e5cff, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 5px 5px 15px 5px #ff8080, -9px 5px 15px 5px #ffe488,
+    -7px -5px 15px 5px #8cff85, 12px -5px 15px 5px #80c7ff,
+    12px 10px 15px 7px #e488ff, -10px 10px 15px 7px #ff616b,
+    -10px -7px 27px 1px #8e5cff, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+.event__image:before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
+  transform: translate3d(0px, 20px, 0) scale(0.95);
+  filter: blur(20px);
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  border-radius: inherit;
+}
+
+/* 
+* Prevents issues when the parent creates a 
+* stacking context. (For example, using the transform
+* property )
+*/
+.event__image::after {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  border-radius: inherit;
 }
 
 .event__image {
@@ -22,6 +123,14 @@
   object-fit: cover;
   margin-bottom: 5px;
   border-radius: 50px 0px;
+  cursor: pointer;
+  transition: all ease-in-out 0.4s;
+  // transform: translate(-50%, -50%);
+
+  @media screen and (min-width: 768px) {
+    width: 180px;
+    height: 227px;
+  }
 }
 
 .event__card::before {
@@ -30,11 +139,19 @@
   z-index: 2;
   width: 108px;
   height: 101px;
+  cursor: pointer;
   left: 33px;
   top: -13px;
 
   border: 1px solid rgba(220, 86, 197, 0.3);
   border-radius: 50px 0px;
+
+  @media screen and (min-width: 768px) {
+    width: 153px;
+    height: 143px;
+    left: 43px;
+    top: -18px;
+  }
 }
 
 .event__info {
@@ -43,11 +160,16 @@
   flex-wrap: wrap;
 
   max-width: 128px;
+
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+  }
 }
 
 .event__name {
   @extend %evtNameTPL;
   margin-bottom: 5px;
+  cursor: pointer;
 }
 
 .event__date {

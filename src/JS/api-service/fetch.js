@@ -8,10 +8,12 @@ export default class ApiFetch {
     this.URL = 'https://app.ticketmaster.com/discovery/v2/events.json?';
     this.KEY = 'apikey=LEkrcdy1DLz9DyNgc9jAo3lbh1silZQu';
     this.page = 1;
+    this.size = 20;
     this.totalElements = 980;
     this.totalPageQuantity = 20;
     this.startSearch = '';
     this.chooseCountry = '';
+    this.artistName = '';
   }
 
   async fetchData(url) {

@@ -9,3 +9,4 @@ import './JS/api-service/countryFilter';
 import './JS/api-service/create-event';
 import './JS/api-service/openModal';
 import './JS/api-service/pagination';
+
