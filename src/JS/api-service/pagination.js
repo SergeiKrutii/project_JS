@@ -7,7 +7,7 @@ const option = {
   itemsPerPage: 20,
   visiblePages: 5,
 };
-
+ 
 function startPaginationHits() {
   const totalEl = api.totalElement < 980 ? api.totalElement : 980;
   option.totalItems = totalEl;
