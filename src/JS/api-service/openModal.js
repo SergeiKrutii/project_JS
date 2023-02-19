@@ -1,21 +1,17 @@
 import { refs } from './refs-api';
-import ApiFetch from './fetch';
+import { api } from './countryFilter';
 import { startPaginationByName } from './pagination';
 import { eventById, eventByName } from './countryFilter';
 
 refs.divBlock.addEventListener('click', openModal);
 refs.svgModal.addEventListener('click', closeModal);
-refs.moreBtnModal.addEventListener('click', onLoadMorAuthor);
+window.addEventListener('click', onLoadMorAuthor);
 
-let artistName = '';
 
-console.log('🚀 ~ out', artistName);
 function openModal(e) {
+
   let dataId = '';
   dataId = e.target.offsetParent.dataset.id;
-
-  artistName = e.target.offsetParent.dataset.artname;
-
   if (
     e.target.className === 'event__card' ||
     e.target.className === 'event__name' ||
@@ -26,10 +22,16 @@ function openModal(e) {
   }
 }
 
-function onLoadMorAuthor() {
-  eventByName(artistName);
-  closeModal();
-  startPaginationByName(artistName);
+function onLoadMorAuthor(e) {
+  const artistName = e.target;
+  
+  if (artistName.classList.contains('modal__authorLink')) {
+    api.artistName = e.target.dataset.artname;
+    eventByName(api.artistName);
+    closeModal();
+    startPaginationByName(api.artistName);
+    api.artistName = '';
+  }
 }
 
 function closeModal() {
@@ -41,3 +43,4 @@ window.onclick = function (e) {
     refs.modal.style.display = 'none';
   }
 };
+

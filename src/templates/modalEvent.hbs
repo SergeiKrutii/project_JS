@@ -1,18 +1,20 @@
 {{#each this}}
-  <div class='modal__card' >
+
     <img src={{image.small}} alt={{name}} class='modal__image' />
+  <div class='modal__card' >
+    <img src={{image.big}} alt={{name}} class='modal__image__big' />
     <div class='modal__box'>
       <div class='modal__info'>
         {{#if pleaseNote}}
         <div>
           <h2 class='modal__caption'>INFO</h2>
-          <p class='modal__description'>{{pleaseNote}}</p>
+          <p class='modal__description modal__description-skroll'>{{pleaseNote}}</p>
         </div>
-        {{/if}}
-        <div>
+        {{/if}} 
+        <div> 
           <h2 class='modal__caption'>WHEN</h2>
           <p class='modal__description'>{{date}}
-            <br />
+            <br /> 
              {{time}} ({{timezone}})</p></div>
         <div>
           <h2 class='modal__caption'>WHERE</h2>
@@ -23,24 +25,26 @@
           <h2 class='modal__caption'>WHO</h2>
           <p class='modal__description'>{{name}}</p></div>
       </div>
-      <ul>
+      <div>
         {{#if prices}}  
         {{#each prices}} 
         <h2 class='modal__caption'>PRICES</h2>
-        <li class='modal__item'>
+        <div class='modal__item'>
             <svg class="modal__svg" width="24px" height="16px">
                 <use href="./images/icons.svg#icon-ticket">
             </svg> 
           <span class='modal__price'>{{type}} {{min}} - {{max}} {{currency}}</span>
            <br />  
           <div class='modal__buyBtn'>
-            <a class="modal__link" href={{url}}>BUY TICKETS</a>
+            <a class="modal__link" href={{../url}}>BUY TICKETS</a>
           </div>
-        </li> 
-        {{/each}}
+        </div>   
+        {{/each}} 
         {{/if}} 
-      </ul>  
-
+      </div> 
     </div>
-  </div>
+  </div> 
+  <div class="more__author" >
+    <span class="modal__authorLink" data-artName={{name}}>MORE FROM THIS AUTHOR</span>
+  </div> 
   {{/each}}
