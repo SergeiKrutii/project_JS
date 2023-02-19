@@ -2,6 +2,8 @@ import { refs } from './refs-api';
 import ApiFetch from './fetch';
 import { debounce } from 'lodash';
 import { startPaginationHits, startPaginationRandom } from './pagination';
+import country from '../../templates/country.hbs';
+import countriesArray from './countriesArray';
 const api = new ApiFetch();
 
 refs.startForm.addEventListener('input', debounce(onSearchStart, 500));
@@ -21,6 +23,11 @@ async function onSearchStart() {
     startPaginationHits();
   }
 }
+refs.countryListLi.innerHTML = country({ countriesArray });
+
+// (() => {
+//   refs.countryListLi.innerHTML = countryTpl({ countryArray });
+// })();
 
 async function clickCountryItem(e) {
   if (e.target.nodeName === 'LI') {

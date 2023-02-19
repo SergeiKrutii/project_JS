@@ -1,0 +1,27 @@
+.js .block {
+    margin-left: -100px;
+    opacity: 0;
+}
+
+.js .block.loading {
+    margin-left: 0;
+    opacity: 1;
+    animation: block-loading 1.5s ease-out 0s 1 forwards;
+}
+
+@keyframes block-loading {
+    0% {
+        margin-left: -100px;
+        opacity: 0;
+    }
+
+    10% {
+        margin-left: -100px;
+        opacity: 0;
+    }
+
+    100% {
+        margin-left: 0;
+        opacity: 1
+    }
+}
