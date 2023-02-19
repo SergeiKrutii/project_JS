@@ -60,7 +60,7 @@
   @media screen and (min-width: 1200px) {
     top: 30px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-column-gap: 56px;
+    grid-column-gap: 70px;
     grid-row-gap: 50px;
   }
 }
@@ -146,10 +146,16 @@
   border: 1px solid rgba(220, 86, 197, 0.3);
   border-radius: 50px 0px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
     width: 153px;
     height: 143px;
-    left: 43px;
+    left: 22px;
+    top: -18px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 153px;
+    height: 143px;
+    left: 45px;
     top: -18px;
   }
 }
