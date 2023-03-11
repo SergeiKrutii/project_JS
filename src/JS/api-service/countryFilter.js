@@ -10,9 +10,6 @@ refs.startForm.addEventListener('input', debounce(onSearchStart, 500));
 refs.countryListLi.addEventListener('click', e => clickCountryItem(e));
 const vw = document.documentElement.clientWidth;
 
-
-
-
 async function onSearchStart() {
   api.startSearch = refs.startForm[0].value.trim();
   if (api.startSearch.length === 0) {
@@ -24,10 +21,6 @@ async function onSearchStart() {
   }
 }
 refs.countryListLi.innerHTML = country({ countriesArray });
-
-// (() => {
-//   refs.countryListLi.innerHTML = countryTpl({ countryArray });
-// })();
 
 async function clickCountryItem(e) {
   if (e.target.nodeName === 'LI') {
@@ -68,7 +61,7 @@ async function eventsHits() {
     api.fetchData(
       `${api.URL}${api.KEY}&keyword=${api.startSearch}
     &countryCode=${api.chooseCountry}&size=${api.size}&page=${api.page}`
-    );  
+    );
     api.size = 20;
     return;
   }

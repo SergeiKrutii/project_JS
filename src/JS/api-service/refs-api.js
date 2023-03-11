@@ -11,6 +11,7 @@ const refs = {
   divBlock: document.querySelector('.block'),
   divModal: document.querySelector('.modal-insert'),
   moreBtnModal: document.querySelector('.more__author'),
+  body: document.querySelector('body'),
 };
 
 export { refs };

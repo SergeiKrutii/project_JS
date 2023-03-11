@@ -7,9 +7,9 @@ refs.divBlock.addEventListener('click', openModal);
 refs.svgModal.addEventListener('click', closeModal);
 window.addEventListener('click', onLoadMorAuthor);
 
+console.log(refs.body);
 
 function openModal(e) {
-
   let dataId = '';
   dataId = e.target.offsetParent.dataset.id;
   if (
@@ -18,13 +18,14 @@ function openModal(e) {
     e.target.className === 'event__image'
   ) {
     refs.modal.style.display = 'block';
+    refs.body.style.overflowY = 'hidden';
     eventById(dataId);
   }
 }
 
 function onLoadMorAuthor(e) {
   const artistName = e.target;
-  
+
   if (artistName.classList.contains('modal__authorLink')) {
     api.artistName = e.target.dataset.artname;
     eventByName(api.artistName);
@@ -36,11 +37,12 @@ function onLoadMorAuthor(e) {
 
 function closeModal() {
   refs.modal.style.display = 'none';
+  refs.body.style.overflowY = 'auto';
 }
 
 window.onclick = function (e) {
   if (e.target.className === 'modal') {
     refs.modal.style.display = 'none';
+    refs.body.style.overflowY = 'auto';
   }
 };
-
