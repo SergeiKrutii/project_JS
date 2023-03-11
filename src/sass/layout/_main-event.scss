@@ -14,11 +14,6 @@
     background-image: url('../images/bgbodyDesc@1x.webp');
     margin-bottom: 80px;
 
-    // @media screen and (min-device-pixel-ratio: 2),
-    //   screen and (min-resolution: 192dpi),
-    //   screen and (min-resolution: 2dppx) {
-    //   background-image: url('../images/bgbodyDesc@2x.webp');
-    // }
     &::before {
       content: '';
       background-color: #212121;
@@ -100,11 +95,6 @@
   border-radius: inherit;
 }
 
-/* 
-* Prevents issues when the parent creates a 
-* stacking context. (For example, using the transform
-* property )
-*/
 .event__image::after {
   content: '';
   z-index: -1;
@@ -125,7 +115,6 @@
   border-radius: 50px 0px;
   cursor: pointer;
   transition: all ease-in-out 0.4s;
-  // transform: translate(-50%, -50%);
 
   @media screen and (min-width: 768px) {
     width: 180px;

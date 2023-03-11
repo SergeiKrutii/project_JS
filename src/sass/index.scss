@@ -2,7 +2,6 @@
 @import './utils/base';
 @import './utils/variables';
 @import './utils/container';
-@import './utils/placeholders';
 
 @import './layout/loaded';
 @import './layout/header';
@@ -10,4 +9,4 @@
 @import './layout/modal';
 @import './layout/pagination';
 @import './layout/footer';
-@import './layout/preloader.scss'
+@import './layout/preloader.scss';
