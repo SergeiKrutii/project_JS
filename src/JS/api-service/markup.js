@@ -13,7 +13,7 @@ export const makeData = event => {
     pleaseNote: event.pleaseNote,
     date: event.dates.start.localDate,
     time: event.dates.start.localTime,
-    timezone: event._embedded.venues[0].timezone,
+    timezone: event?._embedded?.venues[0]?.timezone,
     place: event._embedded.venues[0].name,
     city: event._embedded.venues[0].city.name,
     country: event._embedded.venues[0].country.name,

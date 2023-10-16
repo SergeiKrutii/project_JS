@@ -7,8 +7,6 @@ refs.divBlock.addEventListener('click', openModal);
 refs.svgModal.addEventListener('click', closeModal);
 window.addEventListener('click', onLoadMorAuthor);
 
-console.log(refs.body);
-
 function openModal(e) {
   let dataId = '';
   dataId = e.target.offsetParent.dataset.id;

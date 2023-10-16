@@ -4,7 +4,11 @@ import evtTpl from '../../templates/mainEvent.hbs';
 import evtModTpl from '../../templates/modalEvent.hbs';
 
 async function createEvent(events) {
-  const mark = events.map(event => {
+  const filteredEvents = events.filter(
+    event => event._embedded?.venues !== undefined
+  );
+
+  const mark = filteredEvents.map(event => {
     return makeData(event);
   });
 

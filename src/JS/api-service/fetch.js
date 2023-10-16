@@ -20,6 +20,7 @@ export default class ApiFetch {
     try {
       const response = await axios.get(url);
       const data = response.data;
+
       this.totalElements = data.page.totalElements;
       if (!data._embedded) {
         Notiflix.Notify.failure('No search result!');
